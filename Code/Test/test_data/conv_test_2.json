@@ -1,0 +1,98 @@
+{
+  "conversation_id": "conv_02",
+  "demonstrates": {
+    "session_memory_triggered": true,
+    "ambiguous_query_handled": true
+  },
+
+  "events": [
+    { "role": "assistant", "content": "How can I help you today?" },
+
+    {
+      "role": "user",
+      "content": "I want to make matcha at home, but I’m not sure where to start."
+    },
+
+    {
+      "role": "assistant",
+      "content": "You’ll need matcha powder, hot water, and a whisk or frother. The basics are simple."
+    },
+
+    { "role": "user", "content": "Uhm like what kind of matcha?" },
+
+    {
+      "role": "assistant",
+      "type": "clarifying",
+      "content": "Are you asking about ceremonial vs culinary matcha, or brand recommendations?"
+    },
+
+    {
+      "role": "user",
+      "content": "Ceremonial vs culinary."
+    },
+
+    {
+      "role": "assistant",
+      "content": "Ceremonial matcha is for drinking plain, while culinary matcha is better for lattes or desserts."
+    },
+
+    { "role": "user", "content": "That makes sense." },
+
+    {
+      "role": "assistant",
+      "content": "There is no new question to address."
+    },
+
+    {
+      "role": "user",
+      "content": "How do I whisk it properly?"
+    },
+
+    {
+      "role": "assistant",
+      "type": "clarifying",
+      "content": "Do you want traditional whisking steps or a modern shortcut method?"
+    },
+
+    {
+      "role": "user",
+      "content": "Traditional steps."
+    },
+
+    {
+      "role": "assistant",
+      "content": "Whisk in a zig-zag motion until the matcha becomes smooth and foamy."
+    },
+
+    { "role": "user", "content": "exit" },
+    { "role": "assistant", "content": "Enjoy your matcha!" }
+  ],
+
+  "memory_snapshots": [
+    {
+      "trigger_at_chars": 1020,
+      "session_summary": {
+        "session_intent": "Learn how to prepare matcha at home",
+        "key_facts": [
+          "User is new to making matcha",
+          "User asked about matcha types",
+          "Ceremonial vs culinary distinction explained"
+        ],
+        "constraints": ["Beginner-friendly preparation"],
+        "summary_text": "User is learning the basics of making matcha, including ingredient choice."
+      }
+    },
+
+    {
+      "trigger_at_chars": 1580,
+      "session_summary": {
+        "session_intent": "Understand proper matcha preparation techniques",
+        "key_facts": [
+          "Traditional whisking method discussed",
+          "Foam and texture are important"
+        ],
+        "summary_text": "Conversation progressed from matcha selection to traditional preparation techniques."
+      }
+    }
+  ]
+}

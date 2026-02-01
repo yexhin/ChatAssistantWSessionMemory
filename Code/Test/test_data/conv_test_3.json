@@ -1,0 +1,98 @@
+{
+  "conversation_id": "conv_03",
+  "demonstrates": {
+    "session_memory_triggered": true,
+    "ambiguous_query_handled": true
+  },
+
+  "events": [
+    { "role": "assistant", "content": "How can I help you today?" },
+
+    {
+      "role": "user",
+      "content": "I’m thinking about traveling during Tết but I’m not sure if it’s a good idea."
+    },
+
+    {
+      "role": "assistant",
+      "content": "Traveling during Tết can be enjoyable but often involves higher costs and crowds."
+    },
+
+    { "role": "user", "content": "Uhm what do you mean?" },
+
+    {
+      "role": "assistant",
+      "type": "clarifying",
+      "content": "Are you concerned about budget, crowds, transportation, or destinations?"
+    },
+
+    {
+      "role": "user",
+      "content": "Crowds and transportation."
+    },
+
+    {
+      "role": "assistant",
+      "content": "Popular destinations and transport routes are usually crowded, with limited ticket availability."
+    },
+
+    { "role": "user", "content": "That sounds stressful." },
+
+    {
+      "role": "assistant",
+      "content": "There is no new question to address."
+    },
+
+    {
+      "role": "user",
+      "content": "Any way to reduce that?"
+    },
+
+    {
+      "role": "assistant",
+      "type": "clarifying",
+      "content": "Do you want tips on timing, destination choice, or transportation planning?"
+    },
+
+    {
+      "role": "user",
+      "content": "Destination choice."
+    },
+
+    {
+      "role": "assistant",
+      "content": "Less popular destinations or shorter trips closer to home can reduce crowd-related stress."
+    },
+
+    { "role": "user", "content": "exit" },
+    { "role": "assistant", "content": "Have a great Tết trip!" }
+  ],
+
+  "memory_snapshots": [
+    {
+      "trigger_at_chars": 1100,
+      "session_summary": {
+        "session_intent": "Evaluate whether traveling during Tết is a good idea",
+        "key_facts": [
+          "User plans to travel during Tết",
+          "User is concerned about crowds",
+          "Transportation congestion is a worry"
+        ],
+        "constraints": ["High travel demand during Tết"],
+        "summary_text": "User is unsure about Tết travel due to crowds and transportation issues."
+      }
+    },
+
+    {
+      "trigger_at_chars": 1650,
+      "session_summary": {
+        "session_intent": "Find strategies to reduce travel stress during Tết",
+        "key_facts": [
+          "Destination choice affects crowd levels",
+          "Less popular locations reduce stress"
+        ],
+        "summary_text": "Conversation shifted toward practical planning strategies for Tết travel."
+      }
+    }
+  ]
+}

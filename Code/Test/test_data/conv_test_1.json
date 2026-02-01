@@ -1,0 +1,98 @@
+{
+  "conversation_id": "conv_01",
+  "demonstrates": {
+    "session_memory_triggered": true,
+    "ambiguous_query_handled": true
+  },
+
+  "events": [
+    { "role": "assistant", "content": "How can I help you today?" },
+
+    {
+      "role": "user",
+      "content": "I overestimate what I can do in a day. Can you explain energy management vs time management and how cognitive fatigue affects decision making?"
+    },
+
+    {
+      "role": "assistant",
+      "content": "Energy management focuses on optimizing physical and mental capacity, while time management allocates fixed time blocks. Cognitive fatigue reduces clarity and judgment."
+    },
+
+    { "role": "user", "content": "Uhm any else?" },
+
+    {
+      "role": "assistant",
+      "type": "clarifying",
+      "content": "Do you want to know more about energy management, time management, or cognitive fatigue?"
+    },
+
+    {
+      "role": "user",
+      "content": "Time management please. What if I have too many tasks in one day?"
+    },
+
+    {
+      "role": "assistant",
+      "content": "Prioritize critical tasks, eliminate non-essential work, and plan based on realistic daily capacity."
+    },
+
+    { "role": "user", "content": "Uhm it makes sense" },
+
+    {
+      "role": "assistant",
+      "content": "There is no new question to address."
+    },
+
+    {
+      "role": "user",
+      "content": "How about the cognitive fatigue?"
+    },
+
+    {
+      "role": "assistant",
+      "type": "clarifying",
+      "content": "Are you asking about causes, effects, or management strategies?"
+    },
+
+    {
+      "role": "user",
+      "content": "Its effects."
+    },
+
+    {
+      "role": "assistant",
+      "content": "Cognitive fatigue reduces focus, decision quality, motivation, and energy estimation."
+    },
+
+    { "role": "user", "content": "exit" },
+    { "role": "assistant", "content": "See you later, buddy!" }
+  ],
+
+  "memory_snapshots": [
+    {
+      "trigger_at_chars": 1175,
+      "session_summary": {
+        "session_intent": "Explore strategies for managing an overloaded schedule",
+        "key_facts": [
+          "User overestimates daily capacity",
+          "User has limited energy",
+          "Cognitive fatigue affects decision making"
+        ],
+        "constraints": ["Too many tasks in one day"],
+        "summary_text": "User seeks strategies to manage time and energy due to task overload."
+      }
+    },
+
+    {
+      "trigger_at_chars": 1700,
+      "session_summary": {
+        "session_intent": "Understand productivity and cognitive fatigue",
+        "key_facts": [
+          "Energy management differs from time management",
+          "Cognitive fatigue reduces clarity and judgment"
+        ],
+        "summary_text": "Conversation evolved from time management strategies to understanding cognitive fatigue effects."
+      }
+    }
+  ]
+}
