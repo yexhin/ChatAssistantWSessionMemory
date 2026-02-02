@@ -75,7 +75,22 @@ def should_trigger_summarization(context_size: int) -> bool:
 
 ---
 
-### 3. Session Summarizer
+### 3. Call LLMs for the following Summarizer & Query Understanding
+- A helper function supports the Summarizer & Query Understanding calling LLMs to implement the summarization & analyzing queries.
+  ```python
+  from google import genai
+  import os
+  client = genai.Client(api_key="AIzaSyCyrBFX6KB1paVUbsxhaYDG7gKfeI4d51I")
+
+  def call_llm(prompt: str, model="gemini-2.0-flash") -> str:
+    response = client.models.generate_content(
+        model=model,
+        contents=prompt,
+    )
+    return response.text
+  ```
+
+### 4. Session Summarizer
 
 - Responsible for converting **raw conversation history** into **structured session memory**
 - Follows a **strict JSON schema** defined in `schemas/`
@@ -123,8 +138,7 @@ raw_output = call_llm(prompt=instruction, model="gemini-2.5-pro")
 
 ---
 
-### 4. Query Understanding Pipeline
-
+### 5. Query Understanding Pipeline
 This pipeline is split into **two clear stages** for easier management:
 
 - `query_understanding.py`
@@ -142,19 +156,22 @@ This pipeline is split into **two clear stages** for easier management:
 ## How to Set Up
 
 1. Install required libraries
+```bash
+pip install -r requirements.txt
+```
+
 2. Run the application:
 
 ```bash
 python -m main
-
 ```
 
-1. Start chatting 🎉
+3. Start chatting 🎉
 
 ---
 
 ## Pipeline
-![Chat Assistant Pipeline](images/ChatAssist_Userflow.png)
+![Chat Assistant Pipeline](images/ChatAssist_UserFlow.png)
 
 ## Code Structure
 
