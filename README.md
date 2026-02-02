@@ -88,7 +88,7 @@ Currently, the project uses Gemini models via the Google GenAI SDK.
   ```python
   from google import genai
   import os
-  client = genai.Client(api_key="AIzaSyCyrBFX6KB1paVUbsxhaYDG7gKfeI4d51I")
+  client = genai.Client(api_key="YOUR_API_KEY")
 
   def call_llm(prompt: str, model="gemini-2.0-flash") -> str:
     response = client.models.generate_content(
