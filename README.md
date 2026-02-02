@@ -75,8 +75,16 @@ def should_trigger_summarization(context_size: int) -> bool:
 
 ---
 
-### 3. Call LLMs for the following Summarizer & Query Understanding
+### 3. LLM Invocation for Summarization & Query Understanding
+- The system uses Large Language Models (LLMs) as reasoning components for both session summarization and query understanding.
+- LLM calls are abstracted behind a lightweight helper function to ensure:
+    - Reusability across different pipeline stages
+    - Centralized model configuration
+    - Easy replacement of LLM providers (e.g. Gemini, OpenAI, Claude)
+
+Currently, the project uses Gemini models via the Google GenAI SDK.
 - A helper function supports the Summarizer & Query Understanding calling LLMs to implement the summarization & analyzing queries.
+  
   ```python
   from google import genai
   import os
