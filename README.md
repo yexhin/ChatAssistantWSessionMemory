@@ -216,12 +216,118 @@ project_root/
 
 ---
 
+# Demo output
+### Flow 1: 
+```bash
+Chat started. Type 'exit' to quit.
+How can I help you today?
+
+
+=== USER MESSAGE ===
+You: Give me a full overview of how session memory works in this assistant.
+
+===================
+[Context] Current size: 142 chars
+
+=== QUERY UNDERSTANDING (JSON) ===
+{
+  "original_query": "Give me a full overview of how session memory works in this assistant.",
+  "is_ambiguous": false,
+  "rewritten_query": null,
+  "need_clarification": false,
+  "clarifying_questions": [],
+  "used_session_summary": false
+}
+=================================
+
+=== ASSISTANT RESPONSE ===
+Assistant:
+- Session memory stores recent conversation turns.
+- When the context exceeds a predefined threshold, summarization is triggered.
+- The summary replaces older messages and is reused in future queries.
+
+==========================
+
+
+=== USER MESSAGE ===
+You: Can you explain how summarization is triggered and stored?
+
+===================
+[Context] Current size: 386 chars
+
+
+=== USER MESSAGE ===
+You: What kind of data does the summary usually contain?
+
+===================
+[Context] Current size: 612 chars
+
+[Memory] Context limit exceeded at 612 chars
+[Memory] Triggering session summarization...
+
+Generated Session Summary:
+{
+  "session_summary": {
+    "user_profile": {
+      "prefs": [],
+      "constraints": []
+    },
+    "key_facts": [
+      "User is exploring session memory and summarization behavior"
+    ],
+    "decisions": [
+      "Summarization is used when context exceeds a threshold"
+    ],
+    "open_questions": [
+      "How to optimize summarization granularity?"
+    ],
+    "todos": []
+  },
+  "message_range_summarized": {
+    "from": 0,
+    "to": 5
+  }
+}
+
+```
+
+### Flow 2:
+``` bash
+=== USER MESSAGE ===
+You: How do I make matcha?
+
+===================
+[Context] Current size: 128 chars
+
+=== QUERY UNDERSTANDING (JSON) ===
+{
+  "original_query": "How do I make matcha?",
+  "is_ambiguous": true,
+  "rewritten_query": "How do I make a basic cup of matcha tea at home?",
+  "need_clarification": true,
+  "clarifying_questions": [
+    "Do you want traditional hot matcha or a matcha latte?",
+    "Do you have a bamboo whisk available?"
+  ],
+  "used_session_summary": true
+}
+=================================
+
+Assistant (clarifying):
+--------
+ Do you want traditional hot matcha or a matcha latte?
+--------
+--------
+ Do you have a bamboo whisk available?
+--------
+```
+
+---
 ## Notes
 
-This project was built to demonstrate:
+This project was built for Vulcan Lab:
 
 - Clean agent pipeline design
 - Schema-first LLM outputs
 - Practical session memory handling
 
-Feel free to extend it 🚀
