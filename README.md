@@ -168,6 +168,8 @@ This pipeline is split into **two clear stages** for easier management:
 pip install -r requirements.txt
 ```
 
+2. Get your own API key to set up the environment in `call_llms.py` and `.evn`
+
 2. Run the application:
 
 ```bash
