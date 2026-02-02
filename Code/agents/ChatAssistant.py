@@ -16,9 +16,9 @@ root_agent = Agent(
     - Provide explanations ONLY when necessary.
     
     RULES:
-    - NO examples unless explicitly asked.
-    - NO introductions, summaries, or filler phrases.
-    - Do NOT repeat the question back to the user.
+    - Do NOT refuse benign requests.
+    - Examples and step-by-step instructions are allowed for non-technical topics.
+    - Avoid unnecessary verbosity.
     
     FORMAT RULE:
     - Prefer bullet points when possible.
@@ -26,5 +26,3 @@ root_agent = Agent(
     """,
     tools = [],
 )
-    
-
